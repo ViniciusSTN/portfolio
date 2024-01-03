@@ -1,0 +1,75 @@
+import styled, { css } from 'styled-components';
+
+interface TitleRules {
+  $color: string;
+  $size: string;
+  $weight: string;
+  $margin: boolean;
+}
+
+const TitleProps = css<TitleRules>`
+  ${({ $color, $weight, theme }) => css`
+    color: ${theme.colors[$color]};
+    weight: ${$weight};
+  `}
+
+  ${({ $size, $margin, theme }) => css`
+    ${$size && `size: ${theme.font_sizes[$size]}`};
+    ${$margin && `margin-inline: auto;`};
+    ${$margin && `text-align: center;`};
+  `}
+`;
+
+export const H1 = styled.h1<TitleRules>`
+  ${TitleProps}
+
+  ${({ $size, theme }) =>
+    !$size &&
+    css`
+      font-size: ${theme.font_sizes.xxl};
+
+      @media screen and (min-width: ${theme.breakpoints.sm}) {
+        font-size: ${theme.font_sizes.xxxl};
+      }
+
+      @media screen and (min-width: ${theme.breakpoints.md}) {
+        font-size: ${theme.font_sizes.xxxxl};
+      }
+    `}
+`;
+
+export const H2 = styled.h2<TitleRules>`
+  ${TitleProps}
+
+  ${({ $size, theme }) =>
+    !$size &&
+    css`
+      font-size: ${theme.font_sizes.xl};
+
+      @media screen and (min-width: ${theme.breakpoints.sm}) {
+        font-size: ${theme.font_sizes.xxl};
+      }
+
+      @media screen and (min-width: ${theme.breakpoints.md}) {
+        font-size: ${theme.font_sizes.xxxl};
+      }
+    `}
+`;
+
+export const H3 = styled.h3<TitleRules>`
+  ${TitleProps}
+
+  ${({ $size, theme }) =>
+    !$size &&
+    css`
+      font-size: ${theme.font_sizes.large};
+
+      @media screen and (min-width: ${theme.breakpoints.sm}) {
+        font-size: ${theme.font_sizes.xl};
+      }
+
+      @media screen and (min-width: ${theme.breakpoints.md}) {
+        font-size: ${theme.font_sizes.xxl};
+      }
+    `}
+`;
