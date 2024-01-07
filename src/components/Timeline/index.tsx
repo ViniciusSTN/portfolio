@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Item,
   AgeBox,
@@ -8,12 +8,31 @@ import {
   TextBox,
   Age,
   Text,
+  ImageContainer,
 } from './styles';
 import data from '@/data/timeline';
+import { theme } from '@/styles/theme-provider';
+import Image from 'next/image';
 
 export default function Timeline() {
   const allColors = data.colors;
   const allPosts = data.posts;
+
+  const [image, setImage] = useState(false);
+
+  useEffect(() => {
+    function onResize() {
+      const width = window.innerWidth;
+      if (width < theme.numBreakpoints.md) setImage(false);
+      if (width >= theme.numBreakpoints.md) setImage(true);
+    }
+
+    window.addEventListener('resize', onResize);
+
+    onResize();
+
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   return (
     <Container>
@@ -32,6 +51,16 @@ export default function Timeline() {
             <TextBox>
               <Text $color={currentColor}>{item.data}</Text>
             </TextBox>
+            {image && (
+              <ImageContainer>
+                <Image
+                  src={item.imageUrl}
+                  alt="imagem"
+                  width={130}
+                  height={130}
+                />
+              </ImageContainer>
+            )}
           </React.Fragment>
         );
       })}

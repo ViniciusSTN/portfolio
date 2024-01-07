@@ -9,6 +9,10 @@ export const Container = styled.div`
     display: grid;
     color: ${theme.colors.white};
     grid-template-columns: minmax(85px, 10%) 1fr;
+
+    @media screen and (min-width: ${theme.breakpoints.md}) {
+      grid-template-columns: minmax(85px, 10%) 1fr 160px;
+    }
   `}
 `;
 
@@ -134,4 +138,13 @@ export const Age = styled.span<ItemProps>`
       font-size: ${theme.font_sizes.xl};
     }
   `}
+`;
+
+export const ImageContainer = styled.div`
+  height: 150px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  overflow: hidden;
 `;
