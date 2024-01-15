@@ -12,7 +12,6 @@ import {
 } from './styles';
 import data from '@/data/timeline';
 import { theme } from '@/styles/theme-provider';
-import Image from 'next/image';
 
 export default function Timeline() {
   const allColors = data.colors;
@@ -53,7 +52,7 @@ export default function Timeline() {
             </TextBox>
             {image && (
               <ImageContainer>
-                <Image
+                <img
                   src={item.imageUrl}
                   alt="imagem"
                   width={130}

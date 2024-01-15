@@ -1,4 +1,4 @@
-interface DataContent {
+interface TimelineData {
   colors: string[];
   posts: {
     id: number;
@@ -9,7 +9,7 @@ interface DataContent {
   }[];
 }
 
-const data: DataContent = {
+const data: TimelineData = {
   colors: ['#F4A152', '#F26F7A', '#15A0B9', '#87A546'],
   posts: [
     {

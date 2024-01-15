@@ -8,13 +8,12 @@ import {
   NavContainer,
   Overlay,
 } from './styles';
-import menu from '@/images/menu.svg';
-import logo from '@/images/logo-150.png';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import nav from '@/data/nav';
+import logo from '@/public/images/logo-150.png';
+import menu from '@/public/images/menu.svg';
 
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
@@ -41,7 +40,7 @@ export default function Header() {
         <div>
           <LogoContainer>
             <Link href="/">
-              <Image src={logo} alt="logo" />
+              <img src={logo.src} alt="logo" />
             </Link>
           </LogoContainer>
         </div>
@@ -62,7 +61,7 @@ export default function Header() {
         </NavContainer>
 
         <MenuContainer onClick={() => setNavbar(true)}>
-          <Image src={menu} alt="menu" />
+          <img src={menu.src} alt="menu" />
         </MenuContainer>
       </Content>
     </Container>
