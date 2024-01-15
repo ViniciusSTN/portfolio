@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 
-interface TitleRules {
+interface TitleProps {
   $color: string;
   $size: string;
   $weight: string;
   $margin: boolean;
 }
 
-const TitleProps = css<TitleRules>`
+const TitleClass = css<TitleProps>`
   ${({ $color, $weight, theme }) => css`
     color: ${theme.colors[$color]};
     weight: ${$weight};
@@ -20,8 +20,8 @@ const TitleProps = css<TitleRules>`
   `}
 `;
 
-export const H1 = styled.h1<TitleRules>`
-  ${TitleProps}
+export const H1 = styled.h1<TitleProps>`
+  ${TitleClass}
 
   ${({ $size, theme }) =>
     !$size &&
@@ -38,8 +38,8 @@ export const H1 = styled.h1<TitleRules>`
     `}
 `;
 
-export const H2 = styled.h2<TitleRules>`
-  ${TitleProps}
+export const H2 = styled.h2<TitleProps>`
+  ${TitleClass}
 
   ${({ $size, theme }) =>
     !$size &&
@@ -56,8 +56,8 @@ export const H2 = styled.h2<TitleRules>`
     `}
 `;
 
-export const H3 = styled.h3<TitleRules>`
-  ${TitleProps}
+export const H3 = styled.h3<TitleProps>`
+  ${TitleClass}
 
   ${({ $size, theme }) =>
     !$size &&

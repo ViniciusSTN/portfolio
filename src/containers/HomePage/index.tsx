@@ -1,45 +1,14 @@
 import Header from '@/components/Header';
 import Head from 'next/head';
-import {
-  Button,
-  Content,
-  ImageContainter,
-  TextAnimated,
-  TextBox,
-  TextContainer,
-  TextWrapper,
-  Title,
-} from './styles';
-import Avatar250 from '@/public/images/avatar-250.png';
-import Avatar350 from '@/public/images/avatar-350.png';
-import Avatar450 from '@/public/images/avatar-450.png';
-import { useEffect, useState } from 'react';
-import { theme } from '@/styles/theme-provider';
+import { Content, TextBox, TextContainer } from './styles';
 import { MainContainer } from '../../components/MainContainer';
 import Footer from '@/components/Footer';
-import { StaticImageData } from 'next/image';
+import Title from '@/components/Title';
+import AnimatedAvatar from '@/components/AnimatedAvatar';
+import ExternalBtn from '@/components/ExternalBtn';
+import AnimatedText from '@/components/AnimatedText';
 
 export default function HomePage() {
-  const [image, setImage] = useState<StaticImageData>();
-
-  useEffect(() => {
-    function onResize() {
-      const width = window.innerWidth;
-      if (width < theme.numBreakpoints.sm) setImage(Avatar250);
-      if (width >= theme.numBreakpoints.sm && width < theme.numBreakpoints.xl)
-        setImage(Avatar350);
-      if (width >= theme.numBreakpoints.xl) setImage(Avatar450);
-    }
-
-    onResize(); // chama a função no carregamento inicial
-
-    window.addEventListener('resize', onResize);
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-    };
-  }, []);
-
   return (
     <>
       <Head>
@@ -53,19 +22,12 @@ export default function HomePage() {
           <div>
             <TextContainer>
               <TextBox>Olá, eu sou</TextBox>
-              <Title>Vinicius Santana</Title>
-              <TextWrapper>
-                <TextAnimated>Desenvolvedor Web</TextAnimated>
-              </TextWrapper>
+              <Title color="white">Vinicius Santana</Title>
+              <AnimatedText>Desenvolvedor Web</AnimatedText>
             </TextContainer>
-            <Button href="http://www.google.com">Linkedin</Button>
+            <ExternalBtn href={'http://www.google.com'}>Linkedin</ExternalBtn>
           </div>
-          <ImageContainter>
-            <img
-              src={image ? image.src : '/images/avatar-250.png'}
-              alt="avatar"
-            />
-          </ImageContainter>
+          <AnimatedAvatar />
         </Content>
       </MainContainer>
 
