@@ -23,11 +23,11 @@ export const P = styled.p<ParagraphProps>`
     }
 
     @media screen and (min-width: ${theme.breakpoints.sm}) {
-      font-size: ${theme.font_sizes.xl};
+      font-size: ${theme.font_sizes.large};
     }
 
     @media screen and (min-width: ${theme.breakpoints.md}) {
-      font-size: ${theme.font_sizes.xxl};
+      font-size: ${theme.font_sizes.xl};
     }
   `}
 `;

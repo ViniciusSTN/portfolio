@@ -52,12 +52,7 @@ export default function Timeline() {
             </TextBox>
             {image && (
               <ImageContainer>
-                <img
-                  src={item.imageUrl}
-                  alt="imagem"
-                  width={130}
-                  height={130}
-                />
+                <img src={item.imageUrl} alt="imagem" width={130} />
               </ImageContainer>
             )}
           </React.Fragment>

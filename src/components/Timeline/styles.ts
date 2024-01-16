@@ -9,6 +9,8 @@ export const Container = styled.div`
     display: grid;
     color: ${theme.colors.white};
     grid-template-columns: minmax(85px, 10%) 1fr;
+    max-width: 800px;
+    margin-inline: auto;
 
     @media screen and (min-width: ${theme.breakpoints.md}) {
       grid-template-columns: minmax(85px, 10%) 1fr 160px;
@@ -44,10 +46,6 @@ export const Text = styled.p<ItemProps>`
 
     @media screen and (min-width: ${theme.breakpoints.md}) {
       font-size: ${theme.font_sizes.large};
-    }
-
-    @media screen and (min-width: ${theme.breakpoints.lg}) {
-      font-size: ${theme.font_sizes.xl};
     }
   `}
 `;
