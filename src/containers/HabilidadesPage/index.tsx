@@ -10,7 +10,7 @@ import {
 } from './styles';
 import Footer from '@/components/Footer';
 import Title from '@/components/Title';
-import data from '@/data/habilidades';
+import data from '@/data/skills';
 import Text from '@/components/Text';
 import { useEffect, useState } from 'react';
 import { theme } from '@/styles/theme-provider';

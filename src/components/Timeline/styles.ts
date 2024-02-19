@@ -130,10 +130,7 @@ export const Age = styled.span<ItemProps>`
 
     @media screen and (min-width: ${theme.breakpoints.lg}) {
       font-size: ${theme.font_sizes.large};
-    }
-
-    @media screen and (min-width: ${theme.breakpoints.xl}) {
-      font-size: ${theme.font_sizes.xl};
+      padding-left: 7%;
     }
   `}
 `;

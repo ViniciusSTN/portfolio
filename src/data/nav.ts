@@ -1,4 +1,11 @@
-const nav = {
+type NavData = {
+  data: {
+    children: string;
+    href: string;
+  }[];
+};
+
+const nav: NavData = {
   data: [
     {
       children: 'Início',

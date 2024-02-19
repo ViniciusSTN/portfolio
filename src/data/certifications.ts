@@ -1,4 +1,4 @@
-interface CertificationData {
+interface CertificationsData {
   id: number;
   title: string;
   institution: string;
@@ -8,7 +8,7 @@ interface CertificationData {
   certificationLink: string;
 }
 
-const data: CertificationData[] = [
+const data: CertificationsData[] = [
   {
     id: 1,
     title: 'Javascript e TypeScript',

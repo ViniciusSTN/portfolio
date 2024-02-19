@@ -1,11 +1,11 @@
-interface HabilidadesData {
+interface SkillsData {
   id: number;
   title: string;
   data: string;
   imageUrl: string;
 }
 
-const data: HabilidadesData[] = [
+const data: SkillsData[] = [
   {
     id: 1,
     title: 'Javascript',
